@@ -24,6 +24,8 @@ model User {
   pfp String
   memberships ConversationMembership[]
   messages Message[]
+
+  @@map("users")
 }
 
 model Conversation {
@@ -32,6 +34,8 @@ model Conversation {
   name String?
   memberships ConversationMembership[]
   messages Message[]
+
+  @@map("conversations")
 }
 
 model ConversationMembership {
@@ -44,6 +48,8 @@ model ConversationMembership {
   joinedAt    DateTime    @default(now())
 
   @@unique([userId, conversationId])
+
+  @@map("conversation_memberships")
 }
 
 model Message {
@@ -54,4 +60,6 @@ model Message {
   senderId    Int
   content   String
   createdAt   DateTime    @default(now())
+
+  @@map("messages")
 }
