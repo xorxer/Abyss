@@ -1,9 +1,15 @@
+import bcrypt from 'bcrypt';
+
+// Generate hashed password once
+const defaultPasswordHash = bcrypt.hashSync('defaultpass1*', 10);
+
 interface SeedUser {
     id: number;
     email: string;
     name: string;
     username: string;
     pfp: string;
+    password: string;
 }
 
 interface SeedConversation {
@@ -38,35 +44,40 @@ export const seedData: SeedData = {
             email: 'user1@example.com',
             name: 'User One',
             username: 'user1',
-            pfp: ''
+            pfp: '',
+            password: defaultPasswordHash
         },
         {
             id: 2,
             email: 'user2@example.com',
             name: 'User Two',
             username: 'user2',
-            pfp: ''
+            pfp: '',
+            password: defaultPasswordHash
         },
         {
             id: 3,
             email: 'user3@example.com',
             name: 'User Three',
             username: 'user3',
-            pfp: ''
+            pfp: '',
+            password: defaultPasswordHash
         },
         {
             id: 4,
             email: 'user4@example.com',
             name: 'User Four',
             username: 'user4',
-            pfp: ''
+            pfp: '',
+            password: defaultPasswordHash
         },
         {
             id: 5,
             email: 'user5@example.com',
             name: 'User Five',
             username: 'user5',
-            pfp: ''
+            pfp: '',
+            password: defaultPasswordHash
         }
     ],
 

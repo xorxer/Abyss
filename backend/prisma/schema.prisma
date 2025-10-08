@@ -19,9 +19,10 @@ model User {
   email   String   @unique
   name    String
   username String @unique
+  password    String @default("temp_password_hash")
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  pfp String
+  pfp String?
   memberships ConversationMembership[]
   messages Message[]
 
